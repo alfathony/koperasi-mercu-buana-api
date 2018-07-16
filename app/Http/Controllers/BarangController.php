@@ -18,6 +18,7 @@ class BarangController extends Controller
 
     public function index()
     {
-       return Barang::all();
+       $barang =  Barang::all();
+       return response()->json(['status' => '200', 'data' => $barang]);
     }
 }
