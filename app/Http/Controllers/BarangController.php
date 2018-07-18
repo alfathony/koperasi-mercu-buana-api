@@ -19,7 +19,7 @@ class BarangController extends Controller
 
     public function index()
     {
-       $barang =  Barang::all();
+       $barang =  Barang::orderBy('id','DESC')->get();
        return response()->json(['status' => '200', 'data' => $barang]);
     }
 
@@ -30,14 +30,6 @@ class BarangController extends Controller
         $harga_barang = $_POST['harga_barang'];
 
         if ("" !== $nama_barang && "" !== $merk_barang && "" !== $harga_barang) {
-           
-            // $barang = new Barang;
-
-            // $barang->nama_barang = $nama_barang;
-            // $barang->merk_barang = $merk_barang;
-            // $barang->harga_barang = $harga_barang;
-
-            // $barang->save();
 
             DB::table('barang')->insert(
                 ['nama_barang' => $nama_barang, 'merk_barang' => $merk_barang, 'harga_barang' => $harga_barang]
