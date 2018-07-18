@@ -1,7 +1,7 @@
 # koperasi mercu buana api service
 This project is an assigment final exam
 
-##instalation
+## installation
 run command bellow
 
 ```
