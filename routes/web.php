@@ -19,6 +19,10 @@ $router->get('/barang', [
     'as' => 'barang', 'uses' => 'BarangController@index'
 ]);
 
+$router->post('/barang/add', [
+    'as' => 'add', 'uses' => 'BarangController@add'
+]);
+
 $router->get('/key', function() {
     return str_random(32);
 });
